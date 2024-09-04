@@ -36,4 +36,3 @@ folder <strong>[backbone_network]</strong> contains the dgcnn model that serves 
 folder <strong>[data_post-processing]</strong> contains all the code for the Split & Refinement phase, which post-processes the test results to obtain the final quantitative and qualitative results.<br>
 <br>
 <strong><em>data_preprocessing</em></strong>
-[Note:
