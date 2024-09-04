@@ -25,5 +25,5 @@ Automatic plant growth monitoring is an important task in modern agriculture for
   <strong><em>Our detailed 3D-NOD framework for growth event detection. (a) is the training pipeline and (b) is the testing pipeline. The green points represent old organ, and purple points for new organ. </em></strong>
 </p>
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/f2a98440-b055-4b10-b17a-aff4ccc2f04a" alt="Fig 2" width="90%"/>
+  <img src="https://github.com/user-attachments/assets/f2a98440-b055-4b10-b17a-aff4ccc2f04a" alt="Fig 2" width="100%"/>
 </p>
