@@ -1,4 +1,4 @@
-data/initial_test_data.zip filter=lfs diff=lfs merge=lfs -text
-data/partial_initial_train_data.zip filter=lfs diff=lfs merge=lfs -text
-data/TEST.h5 filter=lfs diff=lfs merge=lfs -text
-data/TRAIN.h5 filter=lfs diff=lfs merge=lfs -text
+backbone_network/data/initial_test_data.zip filter=lfs diff=lfs merge=lfs -text
+backbone_network/data/partial_initial_train_data.zip filter=lfs diff=lfs merge=lfs -text
+backbone_network/data/TRAIN.h5 filter=lfs diff=lfs merge=lfs -text
+backbone_network/data/TEST.h5 filter=lfs diff=lfs merge=lfs -text
