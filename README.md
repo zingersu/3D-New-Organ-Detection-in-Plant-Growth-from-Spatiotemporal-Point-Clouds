@@ -28,5 +28,76 @@ Automatic plant growth monitoring is an important task in modern agriculture for
   <img src="https://github.com/user-attachments/assets/8ba3d119-a8c9-422a-8e7f-18632ca3ed36" alt="Fig 2" width="100%"/>
 </p>
 <br>
-Quick Start
+File Structure
 ------
+Abstract  
+├─data-example  
+│  ├─3DEPS_ratio=0.20  
+│  └─raw-data  
+├─deep-learning-network  
+│  ├─ASIS  
+│  │  ├─data  
+│  │  ├─models  
+│  │  ├─log  
+│  │  │  ├─test  
+│  │  │  └─train  
+│  │  ├─tf_ops  
+│  │  │  ├─3d_interpolation  
+│  │  │  ├─grouping  
+│  │  │  └─sampling  
+│  │  └─utils  
+│  ├─DGCNN  
+│  │  ├─data  
+│  │  ├─models  
+│  │  ├─part_seg  
+│  │  │  ├─log  
+│  │  │  │  ├─test  
+│  │  │  │  └─train  
+│  │  ├─tf_ops  
+│  │  │  ├─3d_interpolation  
+│  │  │  ├─grouping  
+│  │  │  │  ├─test  
+│  │  │  └─sampling  
+│  │  └─utils  
+│  ├─PlantNet  
+│  │  ├─data  
+│  │  ├─models  
+│  │  │  ├─log_test  
+│  │  │  │  ├─test  
+│  │  │  │  └─train  
+│  │  ├─tf_ops  
+│  │  │  ├─3d_interpolation  
+│  │  │  ├─grouping  
+│  │  │  │  ├─test  
+│  │  │  └─sampling  
+│  │  └─utils  
+│  ├─PointNet++  
+│  │  ├─data  
+│  │  ├─models  
+│  │  ├─part_seg  
+│  │  ├─tf_ops  
+│  │  │  ├─3d_interpolation  
+│  │  │  ├─grouping  
+│  │  │  │  ├─test  
+│  │  │  └─sampling  
+│  │  └─utils  
+│  └─PSegNet  
+│      ├─data  
+│      ├─models  
+│      │  ├─log_test  
+│      │  │  ├─test  
+│      │  │  └─train  
+│      ├─tf_ops  
+│      │  ├─3d_interpolation  
+│      │  ├─grouping  
+│      │  │  ├─test  
+│      │  └─sampling  
+│      └─utils  
+├─docs  
+└─down-sampling-strategies  
+    ├─3DEPS  
+    ├─dataset-creation-process  
+    ├─FPS  
+    ├─RS  
+    ├─UVS  
+    └─VFPS   
