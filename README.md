@@ -30,12 +30,15 @@ Automatic plant growth monitoring is an important task in modern agriculture for
 
 File Structure
 ------
->Abstract
->>data
->>>Test.h5
->>>TRAIN.h5
->>>initial_test_data.zip
->>>partial_initial_train_data.zip
->>>test_file_list.txt
->>>train_file_list.txt
-
+Abstract/
+├── data/
+│   ├── TEST.h5
+│   ├── TRAIN.h5
+│   ├── initial_test_data.zip
+│   ├── partial_initial_train_data.zip
+│   ├── test_file_list.txt
+│   └── train_file_list.txt/
+├── models/
+│   └── index.test.js
+└── package.json
+├── README.md
