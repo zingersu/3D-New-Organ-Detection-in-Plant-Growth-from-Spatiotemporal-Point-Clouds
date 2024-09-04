@@ -28,5 +28,8 @@ Automatic plant growth monitoring is an important task in modern agriculture for
   <img src="https://github.com/user-attachments/assets/8ba3d119-a8c9-422a-8e7f-18632ca3ed36" alt="Fig 2" width="100%"/>
 </p>
 
-File Structure
+Quick Start
 ------
+This project contains three folders<br>
+folder <strong>[data_preprocessing]</strong> contains all the code to process the raw dataset and converts the processed data into .h5 format for network training and testing<br>
+folder <strong>[backbone_network]</strong> 
