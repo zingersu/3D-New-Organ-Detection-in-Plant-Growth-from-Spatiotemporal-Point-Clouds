@@ -15,7 +15,7 @@ Automatic plant growth monitoring is an important task in modern agriculture for
 <br>
 3D-NOD is a framework to detect new organs from time-series 3D plant data by spatiotemporal point cloud deep semantic segmentation. The design of 3D-NOD framework drew inspiration from how a well-experienced human utilizes spatiotemporal information to identify growing buds from a plant at two different growth stages. The framework by introducing the Backward & Forward Labeling, the Registration & Mix-up, and the Humanoid Data Augmentation step, make our backbone network be trained to recognize growth events with organ correlation from both temporal and spatial domains. Our framework has shown better sensitivity at segmenting new organs against the conventional way of using a network to conduct direct semantic segmentation.<br>
 <p align="center">
-  A brief comparison of the conventional new organ detection framework and our spatiotemporal framework for new organ detection. (a) is the conventional way and (b) is ours.
+  <strong>A brief comparison of the conventional new organ detection framework and our spatiotemporal framework for new organ detection. (a) is the conventional way and (b) is ours.</strong>
 </p>
 <p align="center">
   <img src="https://github.com/user-attachments/assets/ac0ad520-3351-48d9-9688-ccb081cf455a" alt="Fig 1" width="80%"/>
