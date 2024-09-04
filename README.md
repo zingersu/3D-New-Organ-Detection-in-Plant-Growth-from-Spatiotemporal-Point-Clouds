@@ -18,7 +18,7 @@ Automatic plant growth monitoring is an important task in modern agriculture for
   <strong><em>A brief comparison of the conventional new organ detection framework and our spatiotemporal framework for new organ detection. (a) is the conventional way and (b) is ours.</em></strong>
 </p>
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/ac0ad520-3351-48d9-9688-ccb081cf455a" alt="Fig 1" width="80%"/>
+  <img src="https://github.com/user-attachments/assets/ac0ad520-3351-48d9-9688-ccb081cf455a" alt="Fig 1" width="70%"/>
 </p>
 <br>
 <p align="center">
