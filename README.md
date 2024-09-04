@@ -27,3 +27,6 @@ Automatic plant growth monitoring is an important task in modern agriculture for
 <p align="center">
   <img src="https://github.com/user-attachments/assets/8ba3d119-a8c9-422a-8e7f-18632ca3ed36" alt="Fig 2" width="100%"/>
 </p>
+<br>
+Quick Start
+------
