@@ -43,5 +43,14 @@ Raw data needs to be preprocessed before it can be fed into networks for trainin
 * file <strong>[03ICP.py]</strong> is used to match the point clouds of neighbouring moments two by two and use the T+1 moment point cloud and the T moment point cloud for alignment.<br>
 * file <strong>[04add_index_for_Reg_folder.py]</strong> is used to add a time index to the aligned point cloud, which is fed into the network as a supervisory signal, allowing the network to compare point clouds at different moments in time.<br>
 * file <strong>[05dis_train_from_test.py]</strong> is used to divide the point clouds into a training set and a testing set. The files containing "A" and "B" in their names are used as training sets, and files containing "C" in their names are used as test sets.<br>
-* file <strong>[06Aug_for_train.py]</strong> is used to augment the training set with data using humanoid methods.<br>
+* file <strong>[06Aug_for_train.py]</strong> is used to augment (default 10x) the training set with data using humanoid methods.<br>
 * file <strong>[07script.py]</strong> and file <strong>[08Convert_txt_to_H5_file.py]</strong> are used together to generate the .h5 format file for network input.<br>
+<br>
+<strong><em>backbone_network</em></strong>
+The folder contains all code for training dgcnn network in tensorFlow environment. After getting the .h5 file, pass it as input to the network.<br>
+* folder <strong>[data]</strong> contains part of the training set and all of the test set, and their corresponding .h5 files, which can be used directly to train the model.<br>
+* folder <strong>[models]</strong> contains the semantic segmentation and instance segmentation network of DGCNN, here we use <strong>”pointnet2_part_seg.py“</strong> to implement the task of semantic segmentation of old and new organs, the code contains the network structure and loss function.<br>
+* folder <strong>[part_seg]</strong> contains the code for DGCNN's entire training and testing processes.
+   * file <strong>[00train.py]</strong> is used to train the model parameters using the training set.<br>
+   * file <strong>[01evaluate.py]</strong> is used to test on a test set using the model parameters of the best saved model to obtain predictions.
+   * file <strong>[02eval_iou_accuracy.py]</strong> is used to compute quantitative metrics for the task of semantic segmentation of old and new organs. But note that the calculated metrics are not the final metrics since the input is the aligned point cloud.
