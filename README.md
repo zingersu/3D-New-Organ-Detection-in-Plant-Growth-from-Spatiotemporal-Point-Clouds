@@ -30,12 +30,12 @@ Automatic plant growth monitoring is an important task in modern agriculture for
 
 Quick Start
 ------
-This project contains three folders<br>
+This project contains three folders.<br>
 folder <strong>[data_preprocessing]</strong> contains all the code to process the raw dataset and converts the processed data into .h5 format for network training and testing<br>
 folder <strong>[backbone_network]</strong> contains the dgcnn model that serves as the main architecture for 3D-NOD, it also contains parts of the raw dataset and processed .h5 files which can be used to train and test the model<br>
 folder <strong>[data_post-processing]</strong> contains all the code for the Split & Refinement phase, which post-processes the test results to obtain the final quantitative and qualitative results.<br>
 <br>
-<strong><em>data_preprocessing</em></strong>
+<strong><em>data_preprocessing</em></strong><br>
 Raw data needs to be preprocessed before it can be fed into networks for training or testing, and pre-processing of raw data can be achieved with the following code.<br>
 * file <strong>[00pcd_to_txt.py]</strong> is used to convert the PCD files into TXT files for subsequent processing.<br>
 * file <strong>[01norm.py]</strong> is used to normalise the original TXT files for subsequent ICP registration.<br>
@@ -46,11 +46,11 @@ Raw data needs to be preprocessed before it can be fed into networks for trainin
 * file <strong>[06Aug_for_train.py]</strong> is used to augment (default 10x) the training set with data using humanoid methods.<br>
 * file <strong>[07script.py]</strong> and file <strong>[08Convert_txt_to_H5_file.py]</strong> are used together to generate the .h5 format file for network input.<br>
 <br>
-<strong><em>backbone_network</em></strong>
+<strong><em>backbone_network</em></strong><br>
 The folder contains all code for training dgcnn network in tensorFlow environment. After getting the .h5 file, pass it as input to the network.<br>
 * folder <strong>[data]</strong> contains part of the training set and all of the test set, and their corresponding .h5 files, which can be used directly to train the model.<br>
 * folder <strong>[models]</strong> contains the semantic segmentation and instance segmentation network of DGCNN, here we use <strong>”pointnet2_part_seg.py“</strong> to implement the task of semantic segmentation of old and new organs, the code contains the network structure and loss function.<br>
 * folder <strong>[part_seg]</strong> contains the code for DGCNN's entire training and testing processes.
-      * file <strong>[00train.py]</strong> is used to train the model parameters using the training set.<br>
-      * file <strong>[01evaluate.py]</strong> is used to test on a test set using the model parameters of the best saved model to obtain predictions.
-      * file <strong>[02eval_iou_accuracy.py]</strong> is used to compute quantitative metrics for the task of semantic segmentation of old and new organs. But note that the calculated metrics are not the final metrics since the input is the aligned point cloud.
+    * file <strong>[00train.py]</strong> is used to train the model parameters using the training set.<br>
+    * file <strong>[01evaluate.py]</strong> is used to test on a test set using the model parameters of the best saved model to obtain predictions.
+    * file <strong>[02eval_iou_accuracy.py]</strong> is used to compute quantitative metrics for the task of semantic segmentation of old and new organs. But note that the calculated metrics are not the final metrics since the input is the aligned point cloud.
