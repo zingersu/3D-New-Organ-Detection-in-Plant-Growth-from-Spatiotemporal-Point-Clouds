@@ -53,4 +53,4 @@ The folder contains all code for training dgcnn network in tensorFlow environmen
 * folder <strong>[part_seg]</strong> contains the code for DGCNN's entire training and testing processes.<br>
     * file <strong>[00train.py]</strong> is used to train the model parameters using the training set.<br>
     * file <strong>[01evaluate.py]</strong> is used to test on a test set using the model parameters of the best saved model to obtain predictions.<br>
-    * file <strong>[02eval_iou_accuracy.py]</strong> is used to compute quantitative metrics for the task of semantic segmentation of old and new organs. But note that the calculated metrics are not the final metrics since the input is the aligned point cloud.
+    * file <strong>[02eval_iou_accuracy.py]</strong> is used to compute quantitative metrics for the task of semantic segmentation of old and new organs. But note that the calculated metrics are not the final metrics since the input is the aligned point cloud.<br>
