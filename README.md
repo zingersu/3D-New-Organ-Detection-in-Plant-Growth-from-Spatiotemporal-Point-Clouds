@@ -42,4 +42,6 @@ Raw data needs to be preprocessed before it can be fed into networks for trainin
 * file <strong>[02FPS_once.py]</strong> is used to downsample the points in the file to 2048 points using FPS.<br>
 * file <strong>[03ICP.py]</strong> is used to match the point clouds of neighbouring moments two by two and use the T+1 moment point cloud and the T moment point cloud for alignment.<br>
 * file <strong>[04add_index_for_Reg_folder.py]</strong> is used to add a time index to the aligned point cloud, which is fed into the network as a supervisory signal, allowing the network to compare point clouds at different moments in time.<br>
-* file <strong>[05dis_train_from_test.py]</strong> 
+* file <strong>[05dis_train_from_test.py]</strong> is used to divide the point clouds into a training set and a testing set. The files containing "A" and "B" in their names are used as training sets, and files containing "C" in their names are used as test sets.<br>
+* file <strong>[06Aug_for_train.py]</strong> is used to augment the training set with data using humanoid methods.<br>
+* file <strong>[07script.py]</strong> and file <strong>[08Convert_txt_to_H5_file.py]</strong> are used together to generate the .h5 format file for network input.<br>
