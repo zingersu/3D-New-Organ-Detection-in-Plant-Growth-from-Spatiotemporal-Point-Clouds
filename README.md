@@ -46,6 +46,10 @@ Raw data needs to be preprocessed before it can be fed into networks for trainin
 * file <strong>[06Aug_for_train.py]</strong> is used to augment (default 10x) the training set with data using humanoid methods.<br>
 * file <strong>[07script.py]</strong> and file <strong>[08Convert_txt_to_H5_file.py]</strong> are used together to generate the .h5 format file for network input.<br>
 <br>
+
+* folder <strong>[data]</strong> contains part of the training set and all of the test set, and their corresponding .h5 files, which can be used directly to train the model.<br>
+* folder <strong>[models]</strong> contains the semantic segmentation and instance segmentation network of DGCNN, here we use <strong>”pointnet2_part_seg.py“</strong> to implement the task of semantic segmentation of old and new organs, the code contains the network structure and loss function.<br>
+* folder <strong>[part_seg]</strong> contains the code for DGCNN's entire training and testing processes.<br>
 <strong><em>backbone_network</em></strong><br>
 The folder contains all code for training DGCNN network in tensorFlow environment. After getting the .h5 file, pass it as input to the network.<br>
 * folder <strong>[data]</strong> contains part of the training set and all of the test set, and their corresponding .h5 files, which can be used directly to train the model.<br>
