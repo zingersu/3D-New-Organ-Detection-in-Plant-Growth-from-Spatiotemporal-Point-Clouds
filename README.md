@@ -35,6 +35,7 @@ folder <strong>[data_preprocessing]</strong> contains all the code to process th
 folder <strong>[backbone_network]</strong> contains the dgcnn model that serves as the main architecture for 3D-NOD, it also contains parts of the raw dataset and processed .h5 files which can be used to train and test the model<br>
 folder <strong>[data_post-processing]</strong> contains all the code for the Split & Refinement phase, which post-processes the test results to obtain the final quantitative and qualitative results.<br>
 <br>
+
 <strong><em>data_preprocessing</em></strong><br>
 Raw data needs to be preprocessed before it can be fed into networks for training or testing, and pre-processing of raw data can be achieved with the following code.<br>
 * file <strong>[00pcd_to_txt.py]</strong> is used to convert the PCD files into TXT files for subsequent processing.<br>
@@ -57,7 +58,8 @@ The folder contains all code for training DGCNN network in tensorFlow environmen
    * file <strong>[02eval_iou_accuracy.py]</strong> is used to compute quantitative metrics for the task of semantic segmentation of old and new organs. But note that the calculated metrics are not the final metrics since the input is the aligned point cloud.<br>
 
 <strong>Note:</strong> The data in the "data" folder is currently incomplete, and the full dataset will be updated soon if accepted.<br>
-<strong>Note:</strong> When downloading files from this repository, due to github's limitations, files larger than 50 megabytes need to be downloaded separately, otherwise you will get an error file that cannot be opened.
+<strong>Note:</strong> When downloading files from this repository, due to github's limitations, files larger than 50 megabytes need to be downloaded separately, otherwise you will get an error file that cannot be opened.<br>
 <br>
+
 <strong><em>data_post-processing</em></strong><br>
 The file post-processing code will be released soon if accepted.
