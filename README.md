@@ -37,4 +37,9 @@ folder <strong>[data_post-processing]</strong> contains all the code for the Spl
 <br>
 <strong><em>data_preprocessing</em></strong>
 Raw data needs to be preprocessed before it can be fed into networks for training or testing, and pre-processing of raw data can be achieved with the following code.<br>
-* file <strong>[00pcd_to_txt.py]</strong> is used to convert the PCD files into TXT files for subsequent processing
+* file <strong>[00pcd_to_txt.py]</strong> is used to convert the PCD files into TXT files for subsequent processing.<br>
+* file <strong>[01norm.py]</strong> is used to normalise the original TXT files for subsequent ICP registration.<br>
+* file <strong>[02FPS_once.py]</strong> is used to downsample the points in the file to 2048 points using FPS.<br>
+* file <strong>[03ICP.py]</strong> is used to match the point clouds of neighbouring moments two by two and use the T+1 moment point cloud and the T moment point cloud for alignment.<br>
+* file <strong>[04add_index_for_Reg_folder.py]</strong> is used to add a time index to the aligned point cloud, which is fed into the network as a supervisory signal, allowing the network to compare point clouds at different moments in time.<br>
+* file <strong>[05dis_train_from_test.py]</strong> 
