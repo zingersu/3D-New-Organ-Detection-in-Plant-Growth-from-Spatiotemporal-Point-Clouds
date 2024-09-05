@@ -55,6 +55,9 @@ The folder contains all code for training DGCNN network in tensorFlow environmen
    * file <strong>[00train.py]</strong> is used to train the model parameters using the training set.<br>
    * file <strong>[01evaluate.py]</strong> is used to test on a test set using the model parameters of the best saved model to obtain predictions.<br>
    * file <strong>[02eval_iou_accuracy.py]</strong> is used to compute quantitative metrics for the task of semantic segmentation of old and new organs. But note that the calculated metrics are not the final metrics since the input is the aligned point cloud.<br>
-<strong>[Note:]</strong>
+
+<strong>Note:</strong> The data in the "data" folder is currently incomplete, and the full dataset will be updated soon if accepted.<br>
+<strong>Note:</strong> When downloading files from this repository, due to github's limitations, files larger than 50 megabytes need to be downloaded separately, otherwise you will get an error file that cannot be opened.
 <br>
 <strong><em>data_post-processing</em></strong><br>
+The file post-processing code will be released soon if accepted.
