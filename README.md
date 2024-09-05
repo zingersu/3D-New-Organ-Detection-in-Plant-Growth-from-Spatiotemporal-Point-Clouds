@@ -36,3 +36,5 @@ folder <strong>[backbone_network]</strong> contains the dgcnn model that serves 
 folder <strong>[data_post-processing]</strong> contains all the code for the Split & Refinement phase, which post-processes the test results to obtain the final quantitative and qualitative results.<br>
 <br>
 <strong><em>data_preprocessing</em></strong>
+Raw data needs to be preprocessed before it can be fed into networks for training or testing, and pre-processing of raw data can be achieved with the following code.<br>
+* file <strong>[00pcd_to_txt.py]</strong> is used to convert the PCD files into TXT files for subsequent processing
