@@ -62,4 +62,5 @@ The folder contains all code for training DGCNN network in tensorFlow environmen
 <br>
 
 <strong><em>data_post-processing</em></strong><br>
-Since the DGCNN network takes the aligned point cloud as input and maintains spatial correspondence in its output characteristics. Therefore the raw output of the network does not directly reflect the appearance of new organs in the plant sequence, and further processing of the output of the DGCNN network is required to obtain the detection of new organs in each plant in the time series data
+Since the DGCNN network takes the aligned point cloud as input and maintains spatial correspondence in its output characteristics. Therefore the raw output of the network does not directly reflect the appearance of new organs in the plant sequence, and further processing of the output of the DGCNN network is required to obtain the new organ detection results for each plant in the sequence.<br>
+* file <strong>[00from_txt_to_folder.py]</strong> is used to convert the two TXT files output from the network into two folders, which contain one-to-one correspondence of the point cloud data to facilitate subsequent processing.<br>
