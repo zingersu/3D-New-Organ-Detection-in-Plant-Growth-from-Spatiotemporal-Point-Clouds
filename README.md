@@ -64,3 +64,5 @@ The folder contains all code for training DGCNN network in tensorFlow environmen
 <strong><em>data_post-processing</em></strong><br>
 Since the DGCNN network takes the aligned point cloud as input and maintains spatial correspondence in its output characteristics. Therefore the raw output of the network does not directly reflect the appearance of new organs in the plant sequence, and further processing of the output of the DGCNN network is required to obtain the new organ detection results for each plant in the sequence.<br>
 * file <strong>[00from_txt_to_folder.py]</strong> is used to convert the two TXT files output from the network into two folders, which contain one-to-one correspondence of the point cloud data to facilitate subsequent processing.<br>
+* file <strong>[01Splitment & Refinement.py]</strong> is used to split the aligned point cloud into two plant point clouds at adjacent moments, and subsequently process the point clouds belonging to the same moment using the Refinement method in this paper.<br>
+* file <strong>[02eval_iou_accuracy.py]</strong> is used to calculate quantitative indicators for all plants in the test set.
