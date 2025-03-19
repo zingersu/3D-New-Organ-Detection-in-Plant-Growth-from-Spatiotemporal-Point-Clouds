@@ -1,0 +1,2 @@
+Data_V3：This is our original folder, which can be followed step by step
+TRAIN.h5、TEST.h5：The two files we got after processing that can be used directly to train DGCNN network
