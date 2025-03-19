@@ -52,16 +52,11 @@ for i in range(file_numbers - 1):
 
         def test_best_fit():
 
-
             total_time = 0
-
             for i in range(num_tests):
-
-
                 start = time.time()
                 T, R1, t1 = best_fit_transform(A, B)
                 total_time += time.time() - start
-
             return
 
 
@@ -177,8 +172,8 @@ for i in range(file_numbers - 1):
                 total_time += time.time() - start
 
 
-            print('最小平均距离: {:.8}'.format(min_avg_distance))
-            print('对应的最佳齐次矩阵：')
+            print('Minimum average distance: {:.8}'.format(min_avg_distance))
+            print('The corresponding best chi-square matrix：')
             print(best_T)
 
             return best_T

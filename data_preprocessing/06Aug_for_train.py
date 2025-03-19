@@ -49,7 +49,6 @@ for k in range(0, len(all_files), batch_num):
         rotate_angles = 2 * np.pi / rotate_frequency
 
 
-
         # Processing the point cloud at T time
         each_rotate_angles = i * rotate_angles
         T_rotation_matrix = np.array([[np.cos(each_rotate_angles), 0, -np.sin(each_rotate_angles)],
@@ -62,7 +61,6 @@ for k in range(0, len(all_files), batch_num):
         T_homogeneous_matrix[:3, 3:4] = T_translation_vector
 
         B = np.dot(T_homogeneous_matrix, homo_T_coo.T).T
-
 
 
         # Processing the point cloud at T+1 time

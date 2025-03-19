@@ -34,4 +34,4 @@ for i in range(file_number):
     with open(output_file_path, 'w') as output_file:
         for line in data_lines:
             output_file.write(line + "\n")
-    print("数据已写入到", output_file_path)
+    print(output_file_path)
