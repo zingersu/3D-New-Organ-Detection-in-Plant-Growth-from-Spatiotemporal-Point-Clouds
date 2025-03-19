@@ -10,8 +10,6 @@ from transform_nets import input_transform_net
 
 def placeholder_inputs(batch_size, num_point):
     pointclouds_pl = tf.placeholder(tf.float32, shape=(batch_size, num_point, 4))
-    """ tf.placeholder()函数创建一个占位符. 占位符是在TensorFlow图中的一个容器（节点）, 可以在运行图的时候向这个容器中填充数据, 占位符用于批量接受外界输入, tf.float32表示这个占位符中的元素都是32位浮点数
-    这是占位符的形状（shape）, 占位符中的数据会被要求符合这个形状; 即tf.placeholder()表示TensorFlow中创建一个占位符（placeholder）的语句"""
     labels_pl = tf.placeholder(tf.int32, shape=(batch_size, num_point))
     # input_label_phs = tf.placeholder(tf.int32, shape=(batch_size, NUM_CLASSES))
     return pointclouds_pl, labels_pl
@@ -19,7 +17,6 @@ def placeholder_inputs(batch_size, num_point):
 
 def get_model(point_cloud, is_training, bn_decay=None, bn=True, cat_num=None):
     data_format = 'NHWC'
-    """ 语义分割PointNet, 输入为 BxNx3, 输出为Bxnum_class"""
     batch_size = point_cloud.get_shape()[0].value
     num_point = point_cloud.get_shape()[1].value
     end_points = {}
@@ -30,8 +27,8 @@ def get_model(point_cloud, is_training, bn_decay=None, bn=True, cat_num=None):
 
     k = 20
 
-    adj = tf_util.pairwise_distance(l0_points)    # 返回的结果是一个形状为(5, 4096, 4096)的数组, 其中每个元素是对应点对之间的平方欧氏距离
-    nn_idx = tf_util.dg_knn(adj, k=k)  # (batch, num_points, k); 在 adj_matrix 的最后一个维度上找出其中最小的 k 个值的索引, 具体实现参照tf_util中的dg_knn()函数
+    adj = tf_util.pairwise_distance(l0_points)
+    nn_idx = tf_util.dg_knn(adj, k=k)
     edge_feature = tf_util.get_edge_feature(input_image, nn_idx=nn_idx, k=k)
 
     with tf.variable_scope('transform_net1') as sc:
