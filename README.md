@@ -2,7 +2,7 @@
 ------
 This repo contains the official data and code for our paper:
 
-# 3D-NOD: 3D New Organ Detection in Plant Growth by a Spatiotemporal Point Cloud Deep Segmentation Framework,” Plant Phenomics, 2025, Vol. 7, No. 1, 100002. (†Contributed equally).
+3D-NOD: 3D New Organ Detection in Plant Growth by a Spatiotemporal Point Cloud Deep Segmentation Framework,” Plant Phenomics, 2025, Vol. 7, No. 1, 100002.<br>
 [D. Li†](https://davidleepp.github.io/), F. Ahmed†, and Z. Wang†<br>
 † Equal contribution<br>
 Published online on *Plant Phenomics* in 2025<br>
