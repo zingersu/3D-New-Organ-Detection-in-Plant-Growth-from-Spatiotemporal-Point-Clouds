@@ -9,7 +9,7 @@ Published online on *Plant Phenomics* in 2025<br>
 [[Paper](https://www.sciencedirect.com/science/article/pii/S2643651525000081)]
 [[11-minute video presentation](https://www.bilibili.com/video/BV1HGktYoEwP/)]
 
-=====
+
 Prerequisites
 ------
 The code only has a tensorflow version now, and its corresponding configurations are as follows:<br>
