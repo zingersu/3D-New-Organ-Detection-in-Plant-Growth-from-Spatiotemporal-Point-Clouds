@@ -12,7 +12,7 @@ Published online on *Plant Phenomics* in 2025<br>
 
 Prerequisites
 ------
-The code only has a tensorflow version now, and its corresponding configurations are as follows:<br>
+The code only has a TensorFlow version now, and its corresponding configurations are as follows:<br>
 * All deep networks run under Ubuntu 18.04<br>
 * Tensorflow version:<br>
     * Python == 3.6.13<br>
