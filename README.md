@@ -46,7 +46,7 @@ folder <strong>[backbone_network]</strong> contains the [DGCNN](https://arxiv.or
 folder <strong>[data_post-processing]</strong> contains all the code for the Split & Refinement steps in the testing phase, which acts as the postprocessing on the predicted results from DGCNN for final quantitative and qualitative results.<br>
 <br>
 
-<strong><em>data_preprocessing</em></strong><br>
+<strong><em>Data_preprocessing</em></strong><br>
 Raw data needs to be preprocessed before being fed into the network for training or testing, and preprocessing of raw data can be achieved with the following code.<br>
 * file <strong>[00pcd_to_txt.py]</strong> is used to convert the PCD files into TXT files for subsequent processing.<br>
 * file <strong>[01norm.py]</strong> is used to normalize the original TXT files in 3D space for subsequent ICP registration.<br>
@@ -58,7 +58,7 @@ Raw data needs to be preprocessed before being fed into the network for training
 * file <strong>[07script.py]</strong> and file <strong>[08Convert_txt_to_H5_file.py]</strong> are used together to generate the .h5 format file for network input.<br>
 <br>
 
-<strong><em>backbone_network</em></strong><br>
+<strong><em>Backbone_network</em></strong><br>
 The folder contains all code for training DGCNN network in tensorFlow environment. After getting the .h5 file, pass it as input to the network.<br>
 * folder <strong>[data]</strong> contains part of the training set and all of the test set, and their corresponding .h5 files, which can be used directly to train the model.<br>
 * folder <strong>[models]</strong> contains the semantic segmentation and instance segmentation network of DGCNN, here we use <strong>”pointnet2_part_seg.py“</strong> to implement the task of semantic segmentation of old and new organs, the code contains the network structure and loss function.<br>
@@ -70,7 +70,7 @@ The folder contains all code for training DGCNN network in tensorFlow environmen
 <strong>Note:</strong> When downloading files from this repository, due to github's limitations, files larger than 50 megabytes need to be downloaded separately, otherwise you will get an error file that cannot be opened.<br>
 <br>
 
-<strong><em>data_post-processing</em></strong><br>
+<strong><em>Data_post-processing</em></strong><br>
 Since the DGCNN network takes the aligned point cloud as input and maintains spatial correspondence in its output characteristics. Therefore the raw output of the network does not directly reflect the appearance of new organs in the plant sequence, and further processing of the output of the DGCNN network is required to obtain the new organ detection results for each plant in the sequence.<br>
 * file <strong>[00from_txt_to_folder.py]</strong> is used to convert the two TXT files output from the network into two folders, which contain one-to-one correspondence of the point cloud data to facilitate subsequent processing.<br>
 * file <strong>[01Splitment & Refinement.py]</strong> is used to split the aligned point cloud into two plant point clouds at adjacent moments, and subsequently process the point clouds belonging to the same moment using the Refinement method in this paper.<br>
