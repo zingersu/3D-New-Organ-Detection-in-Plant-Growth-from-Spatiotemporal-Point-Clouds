@@ -41,20 +41,20 @@ Automatic plant growth monitoring is an important task in modern agriculture for
 Quick Start
 ------
 This project contains three folders.<br>
-folder <strong>[data_preprocessing]</strong> contains all the code to process the raw dataset and convert the processed data into .h5 format for network training and testing<br>
-folder <strong>[backbone_network]</strong> contains the [DGCNN](https://arxiv.org/abs/1801.07829) model that serves as the main architecture for 3D-NOD, it also contains parts of the raw dataset and processed .h5 files that can be used to train and test the model<br>
+folder <strong>[data_preprocessing]</strong> contains all the code to preprocess the raw dataset and convert the processed data into .h5 format for network training and testing.<br>
+folder <strong>[backbone_network]</strong> contains the [DGCNN](https://arxiv.org/abs/1801.07829) model that serves as the main architecture for 3D-NOD, it also contains parts of the raw dataset and processed .h5 files that can be used to train and test the model.<br>
 folder <strong>[data_post-processing]</strong> contains all the code for the Split & Refinement steps in the testing phase, which acts as the postprocessing on the predicted results from DGCNN for final quantitative and qualitative results.<br>
 <br>
 
 <strong><em>data_preprocessing</em></strong><br>
-Raw data needs to be preprocessed before it can be fed into networks for training or testing, and pre-processing of raw data can be achieved with the following code.<br>
+Raw data needs to be preprocessed before being fed into the network for training or testing, and preprocessing of raw data can be achieved with the following code.<br>
 * file <strong>[00pcd_to_txt.py]</strong> is used to convert the PCD files into TXT files for subsequent processing.<br>
-* file <strong>[01norm.py]</strong> is used to normalise the original TXT files for subsequent ICP registration.<br>
-* file <strong>[02FPS_once.py]</strong> is used to downsample the points in the file to 2048 points using FPS.<br>
-* file <strong>[03ICP.py]</strong> is used to match the point clouds of neighbouring moments two by two and use the T+1 moment point cloud and the T moment point cloud for alignment.<br>
-* file <strong>[04add_index_for_Reg_folder.py]</strong> is used to add a time index to the aligned point cloud, which is fed into the network as a supervisory signal, allowing the network to compare point clouds at different moments in time.<br>
+* file <strong>[01norm.py]</strong> is used to normalize the original TXT files in 3D space for subsequent ICP registration.<br>
+* file <strong>[02FPS_once.py]</strong> is used to downsample the points in the file to 2048 points in each point cloud using FPS.<br>
+* file <strong>[03ICP.py]</strong> is used to match the point clouds of every two adjacent moments and use the T+1 moment point cloud and the T moment point cloud for merge.<br>
+* file <strong>[04add_index_for_Reg_folder.py]</strong> is used to add a time index to each of the point in the merged point cloud (0 for the latest moment, and 1 for the previous moment), which is then fed into the network as a supervisory signal, allowing the network to have the ability to "distinguish" the two point clouds from two different times in the merged point cloud.<br>
 * file <strong>[05dis_train_from_test.py]</strong> is used to divide the point clouds into a training set and a testing set. The files containing "A" and "B" in their names are used as training sets, and files containing "C" in their names are used as test sets.<br>
-* file <strong>[06Aug_for_train.py]</strong> is used to augment (default 10x) the training set with data using humanoid methods.<br>
+* file <strong>[06Aug_for_train.py]</strong> is used to augment (default 10x) the training set with Humanoid Data Augmentation (HDA).<br>
 * file <strong>[07script.py]</strong> and file <strong>[08Convert_txt_to_H5_file.py]</strong> are used together to generate the .h5 format file for network input.<br>
 <br>
 
