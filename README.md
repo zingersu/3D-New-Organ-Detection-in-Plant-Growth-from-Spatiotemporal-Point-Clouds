@@ -41,9 +41,9 @@ Automatic plant growth monitoring is an important task in modern agriculture for
 Quick Start
 ------
 This project contains three folders.<br>
-folder <strong>[data_preprocessing]</strong> contains all the code to process the raw dataset and converts the processed data into .h5 format for network training and testing<br>
-folder <strong>[backbone_network]</strong> contains the dgcnn model that serves as the main architecture for 3D-NOD, it also contains parts of the raw dataset and processed .h5 files which can be used to train and test the model<br>
-folder <strong>[data_post-processing]</strong> contains all the code for the Split & Refinement phase, which post-processes the test results to obtain the final quantitative and qualitative results.<br>
+folder <strong>[data_preprocessing]</strong> contains all the code to process the raw dataset and convert the processed data into .h5 format for network training and testing<br>
+folder <strong>[backbone_network]</strong> contains the [DGCNN](https://arxiv.org/abs/1801.07829) model that serves as the main architecture for 3D-NOD, it also contains parts of the raw dataset and processed .h5 files that can be used to train and test the model<br>
+folder <strong>[data_post-processing]</strong> contains all the code for the Split & Refinement steps in the testing phase, which acts as the postprocessing on the predicted results from DGCNN for final quantitative and qualitative results.<br>
 <br>
 
 <strong><em>data_preprocessing</em></strong><br>
