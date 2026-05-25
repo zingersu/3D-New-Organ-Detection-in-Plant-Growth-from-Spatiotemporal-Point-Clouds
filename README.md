@@ -51,7 +51,7 @@ Raw data needs to be preprocessed before being fed into the network for training
 * file <strong>[00pcd_to_txt.py]</strong> is used to convert the PCD files into TXT files for subsequent processing.<br>
 * file <strong>[01norm.py]</strong> is used to normalize the original TXT files in 3D space for subsequent ICP registration.<br>
 * file <strong>[02FPS_once.py]</strong> is used to downsample the file to 2048 points per point cloud using FPS.<br>
-* file <strong>[03ICP.py]</strong> is used to align the point clouds of every two adjacent moments and <strong>[use the T+1 moment point cloud and the T moment point cloud for merge]</strong>.<br>
+* file <strong>[03ICP.py]</strong> is used to align the point clouds of every two adjacent moments and <strong>use the T+1 moment point cloud and the T moment point cloud for merge</strong>.<br>
 * file <strong>[04add_index_for_Reg_folder.py]</strong> is used to add a time index to each of the point in the merged point cloud (0 for the latest moment, and 1 for the previous moment), which is then fed into the network as a supervisory signal, allowing the network to have the ability to "distinguish" the two point clouds from two different times in the merged point cloud.<br>
 * file <strong>[05dis_train_from_test.py]</strong> is used to divide the point clouds into a training set and a testing set. The files containing "A" and "B" in their names are used as training sets, and files containing "C" in their names are used as test sets.<br>
 * file <strong>[06Aug_for_train.py]</strong> is used to augment (default 10x) the training set with Humanoid Data Augmentation (HDA).<br>
@@ -60,14 +60,14 @@ Raw data needs to be preprocessed before being fed into the network for training
 
 <strong><em>Backbone_network</em></strong><br>
 The folder contains all code for training DGCNN network in the TensorFlow environment. The previously generated .h5 file is passed on to the network as the input.<br>
-* folder <strong>[data]</strong> contains <strong>[part of the training set]</strong> and all of the test set, and their corresponding .h5 files, which can be used directly to train the model.<br>
-* folder <strong>[models]</strong> contains the semantic segmentation and instance segmentation network of DGCNN, here we use <strong>”pointnet2_part_seg.py“</strong> to implement the task of semantic segmentation of old and new organs, the code contains the network structure and loss function.<br>
+* folder <strong>[data]</strong> contains <strong>part of the training set</strong> and all of the testing set, and their corresponding .h5 files, which can be used directly to train the model.<br>
+* folder <strong>[models]</strong> contains the semantic segmentation and <strong>instance segmentation network</strong> of DGCNN, here we use <strong>"pointnet2_part_seg.py"</strong> to implement the task of semantic segmentation of old and new organs, the code defines the network structure as well as the loss function.<br>
 * folder <strong>[part_seg]</strong> contains the code for DGCNN's entire training and testing processes.<br>
-   * file <strong>[00train.py]</strong> is used to train the model parameters using the training set.<br>
-   * file <strong>[01evaluate.py]</strong> is used to test on a test set using the model parameters of the best saved model to obtain predictions.<br>
-   * file <strong>[02eval_iou_accuracy.py]</strong> is used to compute quantitative metrics for the task of semantic segmentation of old and new organs. But note that the calculated metrics are not the final metrics since the input is the aligned point cloud.<br>
+   * file <strong>[00train.py]</strong> is used to train the model using the training set.<br>
+   * file <strong>[01evaluate.py]</strong> is used to do testing (predictions) on best trained model parameters.<br>
+   * file <strong>[02eval_iou_accuracy.py]</strong> is used to compute quantitative metrics for the task of semantic segmentation of old and new organs. But note that the calculated metrics are not the final metrics since the input is a merged point cloud that has to be further separated and refined.<br>
 
-<strong>Note:</strong> When downloading files from this repository, due to github's limitations, files larger than 50 megabytes need to be downloaded separately, otherwise you will get an error file that cannot be opened.<br>
+<strong>Note:</strong> When downloading files from this repository, due to github's limitations, files larger than 50 MB need to be downloaded separately, otherwise you will get an error file that cannot open.<br>
 <br>
 
 <strong><em>Data_post-processing</em></strong><br>
