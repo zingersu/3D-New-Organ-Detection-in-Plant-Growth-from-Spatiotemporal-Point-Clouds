@@ -51,7 +51,7 @@ Raw data needs to be preprocessed before being fed into the network for training
 * file <strong>[00pcd_to_txt.py]</strong> is used to convert the PCD files into TXT files for subsequent processing.<br>
 * file <strong>[01norm.py]</strong> is used to normalize the original TXT files in 3D space for subsequent ICP registration.<br>
 * file <strong>[02FPS_once.py]</strong> is used to downsample the file to 2048 points per point cloud using FPS.<br>
-* file <strong>[03ICP.py]</strong> is used to align the point clouds of every two adjacent moments and <strong>use the T+1 moment point cloud and the T moment point cloud for merge</strong>.<br>
+* file <strong>[03ICP.py]</strong> is used to merge the point clouds of every two adjacent moments and <strong>use the T+1 moment point cloud and the T moment point cloud for merge</strong>.<br>
 * file <strong>[04add_index_for_Reg_folder.py]</strong> is used to add a time index to each of the point in the merged point cloud (0 for the latest moment, and 1 for the previous moment), which is then fed into the network as a supervisory signal, allowing the network to have the ability to "distinguish" the two point clouds from two different times in the merged point cloud.<br>
 * file <strong>[05dis_train_from_test.py]</strong> is used to divide the point clouds into a training set and a testing set. The files containing "A" and "B" in their names are used as training sets, and files containing "C" in their names are used as test sets.<br>
 * file <strong>[06Aug_for_train.py]</strong> is used to augment (default 10x) the training set with Humanoid Data Augmentation (HDA).<br>
@@ -71,7 +71,7 @@ The folder contains all code for training DGCNN network in the TensorFlow enviro
 <br>
 
 <strong><em>Data_post-processing</em></strong><br>
-Since the DGCNN network takes the aligned point cloud as input and maintains spatial correspondence in its output characteristics. Therefore the raw output of the network does not directly reflect the appearance of new organs in the plant sequence, and further processing of the output of the DGCNN network is required to obtain the new organ detection results for each plant in the sequence.<br>
-* file <strong>[00from_txt_to_folder.py]</strong> is used to convert the two TXT files output from the network into two folders, which contain one-to-one correspondence of the point cloud data to facilitate subsequent processing.<br>
-* file <strong>[01Splitment & Refinement.py]</strong> is used to split the aligned point cloud into two plant point clouds at adjacent moments, and subsequently process the point clouds belonging to the same moment using the Refinement method in this paper.<br>
-* file <strong>[02eval_iou_accuracy.py]</strong> is used to calculate quantitative indicators for all plants in the test set.
+Since the DGCNN network takes the merged point cloud (from two adjacent moments) as input, the output of the network is still the same merged point cloud with labels. Therefore further processing on the output of the DGCNN network is required to obtain the new/old organ detection results for each single plant point cloud in the 3D growth sequence.<br>
+* file <strong>[00from_txt_to_folder.py]</strong> is used to convert <strong>the two TXT files</strong> output from the network into two folders, which contain one-to-one correspondence of the point cloud data to facilitate subsequent processing.<br>
+* file <strong>[01Splitment & Refinement.py]</strong> is used to split the merged/aligned point cloud into two plant point clouds from adjacent moments, respectively; and the ambiguous point clouds (with organ growth state detection labels) belonging to the same moment are then refined and combined into one single final point cloud using the "Refinement" method.<br>
+* file <strong>[02eval_iou_accuracy.py]</strong> is used to calculate quantitative metrics for all final results of the testing set.
