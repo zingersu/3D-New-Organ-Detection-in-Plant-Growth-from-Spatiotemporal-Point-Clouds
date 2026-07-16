@@ -51,7 +51,7 @@ Raw data needs to be preprocessed before being fed into the network for training
 * file <strong>[00pcd_to_txt.py]</strong> is used to convert the PCD files into TXT files for subsequent processing.<br>
 * file <strong>[01norm.py]</strong> is used to normalize the original TXT files in 3D space for subsequent ICP registration.<br>
 * file <strong>[02FPS_once.py]</strong> is used to downsample the file to 2048 points per point cloud using FPS.<br>
-* file <strong>[03ICP.py]</strong> is used to merge the point clouds of every two adjacent moments and <strong>use the T+1 moment point cloud and the T moment point cloud for merge</strong>.<br>
+* file <strong>[03ICP.py]</strong> is used to merge the point clouds of every two adjacent moments (e.g., the T+1 moment point cloud and the T moment point cloud for merge).<br>
 * file <strong>[04add_index_for_Reg_folder.py]</strong> is used to add a time index to each of the point in the merged point cloud (0 for the latest moment, and 1 for the previous moment), which is then fed into the network as a supervisory signal, allowing the network to have the ability to "distinguish" the two point clouds from two different times in the merged point cloud.<br>
 * file <strong>[05dis_train_from_test.py]</strong> is used to divide the point clouds into a training set and a testing set. The files containing "A" and "B" in their names are used as training sets, and files containing "C" in their names are used as test sets.<br>
 * file <strong>[06Aug_for_train.py]</strong> is used to augment (default 10x) the training set with Humanoid Data Augmentation (HDA).<br>
