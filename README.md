@@ -61,8 +61,8 @@ Raw data needs to be preprocessed before being fed into the network for training
 
 <strong><em>Backbone_network</em></strong><br>
 The folder contains all code for training DGCNN network in the TensorFlow environment. The previously generated .h5 file is passed on to the network as the input.<br>
-* folder <strong>[data]</strong> contains <strong>all of the training set</strong> and all of the testing set, and their corresponding .h5 files, which can be used directly to train the model.<br>
-* folder <strong>[models]</strong> contains the semantic segmentation and <strong>instance segmentation network</strong> of DGCNN, here we use <strong>"pointnet2_part_seg.py"</strong> to implement the task of semantic segmentation of old and new organs, the code defines the network structure as well as the loss function.<br>
+* folder <strong>[data]</strong> contains all of the training set and all of the testing set, and their corresponding .h5 files, which can be used directly to train the model.<br>
+* folder <strong>[models]</strong> contains the semantic segmentation network of DGCNN, here we use <strong>"pointnet2_part_seg.py"</strong> to implement the task of semantic segmentation of old and new organs, the code defines the network structure as well as the loss function.<br>
 * folder <strong>[part_seg]</strong> contains the code for DGCNN's entire training and testing processes.<br>
    * file <strong>[00train.py]</strong> is used to train the model using the training set.<br>
    * file <strong>[01evaluate.py]</strong> is used to do testing (predictions) on best trained model parameters.<br>
